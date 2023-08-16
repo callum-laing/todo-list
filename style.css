@@ -15,30 +15,46 @@ body {
   background-color: #F3F6F6;
   font-family: 'Roboto', sans-serif;
   color: #0F1415;
+  font-family: "Poiret One"
 }
 
+p {
+  font-weight: 600;
+}
+
+
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 900;
 }
 
 h3 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 900;
   padding-bottom: 5px;
 }
 
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+}
 
 /* Content Wrapper */
 .container {
   height: 100vh;
   overflow: none;
   display: grid;
-  grid-template-columns: 300px 1fr 300px;
+  grid-template-columns: 250px 1fr;
   grid-template-rows: 70px 1fr;
   grid-template-areas:
-    "header header header"
-    "side main right-col";
+    "header header"
+    "side main";
 }
 
 
@@ -57,23 +73,42 @@ h3 {
 .title {
   font-size: 2.5rem;
   font-weight: 900;
+  color: white;
+  margin-top: 5px;
 }
 
 .title-svg {
   width: 60px;
   height: 60x;
-  fill: #0F1415;
+  fill: white;
   margin-left: 20px;
 }
-
 
 
 /* Main Content Styling */
 .main-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
+.task-list {
+  margin-top: 20px;
+}
+
+.add-task {
+  width: 400px;
+  text-align: center;
+  background-color: #cccbca;
+}
+
+.add-task:hover {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 2px solid #cccbca;
+  cursor: pointer;
+}
 
 
 /* Sidebar */
@@ -92,20 +127,14 @@ h3 {
   padding-top: 30px;
 }
 
-button {
-  display: flex;
-  align-items: center;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: none;
-  border: none;
+.sidebar-btn {
+  display: block;
   background-color: #A98E89;
   text-align: left;
 }
 
-button:hover,
-button:active {
+.sidebar-btn:hover,
+.sidebar-btn:active {
   background-color: white;
   cursor: pointer;
 }
@@ -114,4 +143,11 @@ button:active {
 .btn-svg {
   width: 20px;
   height: 20px;
+}
+
+.project-title-text {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
 }
