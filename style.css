@@ -1,45 +1,117 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  background-color: #F3F6F6;
+  font-family: 'Roboto', sans-serif;
+  color: #0F1415;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+
+/* Content Wrapper */
+.container {
+  height: 100vh;
+  overflow: none;
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    "header header header"
+    "side main right-col";
+}
+
+
+
+/* Header Styling */
+.header {
+  grid-area: header;
+  background-color: #856660;
+}
+
+.title-container {
+  display: flex;
+  align-items: left;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.title-svg {
+  width: 60px;
+  height: 60x;
+  fill: #0F1415;
+  margin-left: 20px;
+}
+
+
+
+/* Main Content Styling */
+.main-content {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* Sidebar */
+.sidebar {
+  background-color: #A98E89;
+  grid-area: side;
+}
+
+.sidebar-flex {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding-top: 30px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: none;
+  border: none;
+  background-color: #A98E89;
+  text-align: left;
+}
+
+button:hover,
+button:active {
+  background-color: white;
+  cursor: pointer;
+}
+
+
+.btn-svg {
+  width: 20px;
+  height: 20px;
 }

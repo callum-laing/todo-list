@@ -1,3 +1,13 @@
-document.querySelector(
-  "#app"
-).innerHTML = `<div><h1>This is a placeholder for my To-do app</h1><h2>Once I create a plan of action, this text will change!</h2></div>`;
+// document.querySelector("#app").innerHTML = `<div id="main-wrapper">
+//     <div class="header">
+//       <h2>This is a world!</h2>
+//     </div>
+
+//     <div class="sidebar">
+//       <h2>Hello world!</h2>
+//     </div>
+
+//     <div class="content">
+//       <h2>Goodbye world!</h2>
+//     </div>
+//   </div>`;
