@@ -159,3 +159,23 @@ button {
   padding: 5px;
   border-bottom: 1px solid black;
 }
+
+.project-title-list {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  margin-left: 20px;
+  list-style-type: none;
+}
+
+.project-btn {
+  font-size: 0.8rem;
+  width: 40px;
+  color: red;
+  background-color: #cccbca;
+  cursor: pointer;
+}
+
+.project-btn:hover {
+  background-color: white;
+}

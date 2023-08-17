@@ -22,7 +22,7 @@ function navigatePage(page) {
 function renderProjects() {
   return state.projects
     .map((project) => {
-      return `<li> ${project.title} </li> <button id="btn-${project.id}"> Delete </button>`;
+      return `<div class="project-title-list"><li> ${project.title} </li> <button class="project-btn" id="btn-${project.id}"> X </button></div>`;
     })
     .reduce((acc, elm) => acc + elm, []);
 }
