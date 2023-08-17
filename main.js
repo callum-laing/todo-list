@@ -1,13 +1,15 @@
-// document.querySelector("#app").innerHTML = `<div id="main-wrapper">
-//     <div class="header">
-//       <h2>This is a world!</h2>
-//     </div>
+import homeTab from "./src/home";
 
-//     <div class="sidebar">
-//       <h2>Hello world!</h2>
-//     </div>
+function loadInitialContent(mainContent) {
+  const container = document.querySelector("#mainContent");
+  container.appendChild(homeTab);
+}
 
-//     <div class="content">
-//       <h2>Goodbye world!</h2>
-//     </div>
-//   </div>`;
+document.addEventListener("DOMContentLoaded", () => {
+  loadInitialContent(homeTab);
+
+  const homeLink = document.querySelector("#homeLink");
+  homeLink.addEventListener("click", () => {
+    loadInitialContent(homeTab);
+  });
+});
