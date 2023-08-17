@@ -1,15 +1,71 @@
-import homeTab from "./src/home";
+import renderHome from "./src/home";
 
-function loadInitialContent(mainContent) {
-  const container = document.querySelector("#mainContent");
-  container.appendChild(homeTab);
+var state = {
+  page: "home",
+  projects: [],
+};
+
+function uuidv4() {
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16)
+  );
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadInitialContent(homeTab);
+function navigatePage(page) {
+  state.page = page;
+  renderContent();
+}
 
-  const homeLink = document.querySelector("#homeLink");
-  homeLink.addEventListener("click", () => {
-    loadInitialContent(homeTab);
+function renderProjects() {
+  return state.projects
+    .map((project) => {
+      return `<li> ${project.title} </li> <button id="btn-${project.id}"> Delete </button>`;
+    })
+    .reduce((acc, elm) => acc + elm, []);
+}
+console.log(renderProjects());
+
+function renderContent() {
+  const projectListEl = document.querySelector("#project-list");
+  projectListEl.innerHTML = renderProjects();
+  state.projects.forEach((project) => {
+    document
+      .querySelector(`#btn-${project.id}`)
+      .addEventListener("click", () => removeProject(project.id));
   });
+
+  if (state.page == "home") {
+    console.log("works");
+    renderHome();
+  }
+}
+
+const homeLink = document.querySelector("#homeLink");
+homeLink.addEventListener("click", () => {
+  renderContent();
 });
+
+function addProject(name) {
+  state.projects.push({
+    title: name,
+    id: uuidv4(),
+  });
+  renderContent();
+}
+
+function removeProject(uuid) {
+  state.projects = state.projects.filter((p) => p.id !== uuid);
+
+  renderContent();
+}
+
+renderContent();
+addProject("tweedle");
+addProject("dum");
+addProject("random");
+addProject("dee");
+removeProject("dee");
+removeProject("tweedle");

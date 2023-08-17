@@ -1,4 +1,4 @@
-function homeTab() {
+function renderHome() {
   const homePage = document.querySelector("#mainContent");
   homePage.innerHTML = `<div class="content-title">
         <h2>Home</h2>
@@ -12,4 +12,4 @@ function homeTab() {
   return homePage;
 }
 
-export default homeTab();
+export default renderHome;
