@@ -22,6 +22,14 @@ function navigatePage(page) {
 function createNewProject() {
   const newProjectEl = document.querySelector("#new-project");
   document.createElement("div").classList.add("newProject");
+  // newProjectEl.innerHTML = `
+  //   <div class="newProject">
+  //               <form action="">
+  //           <input type="text" id="newProjectText" required minlength="3">
+  //           <button id="confirmProject" value="Confirm">Confirm</button>
+  //           <button id="cancelProject">X</button>
+  //         </form>
+  //     </div>`;
 
   const newProjForm = document.createElement("form");
   newProjectEl.appendChild(newProjForm);
@@ -30,6 +38,7 @@ function createNewProject() {
   newProjText.id = "newProjectText";
   newProjText.type = "text";
   newProjText.setAttribute("minlength", "3");
+  newProjText.required = true;
   newProjForm.appendChild(newProjText);
 
   const confirmProjText = document.createElement("input");
@@ -38,19 +47,12 @@ function createNewProject() {
   confirmProjText.value = "confirm";
   newProjForm.appendChild(confirmProjText);
 
-  const cancelProjBtn = document.createElement("button");
-  cancelProjBtn.id = "cancelProject";
-  cancelProjBtn.textContent = "X";
-  newProjForm.appendChild(cancelProjBtn);
+  const cancelProjText = document.createElement("input");
+  cancelProjText.id = "cancelProject";
+  cancelProjText.type = "submit";
+  cancelProjText.value = "X";
+  newProjForm.appendChild(cancelProjText);
 
-  // `
-  //   <div class="newProject">
-  //               <form action="">
-  //           <input type="text" id="newProjectText" required minlength="3">
-  //           <input type="submit" id="confirmProject" value="Confirm">
-  //           <button id="cancelProject">X</button>
-  //         </form>
-  //     </div>`;
   const confirmProjectBtn = document.querySelector("#confirmProject");
   const cancelProjectBtn = document.querySelector("#cancelProject");
 
@@ -121,12 +123,12 @@ function startApp() {
     .querySelector("#addProject")
     .addEventListener("click", createNewProject);
   renderContent();
-  addProject("tweedle");
-  addProject("dum");
-  addProject("random");
-  addProject("dee");
-  removeProject("dee");
-  removeProject("tweedle");
+  // addProject("tweedle");
+  // addProject("dum");
+  // addProject("random");
+  // addProject("dee");
+  // removeProject("dee");
+  // removeProject("tweedle");
 }
 
 startApp();
