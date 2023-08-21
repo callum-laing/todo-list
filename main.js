@@ -19,6 +19,60 @@ function navigatePage(page) {
   renderContent();
 }
 
+function createNewProject() {
+  const newProjectEl = document.querySelector("#new-project");
+  document.createElement("div").classList.add("newProject");
+
+  const newProjForm = document.createElement("form");
+  newProjectEl.appendChild(newProjForm);
+
+  const newProjText = document.createElement("input");
+  newProjText.id = "newProjectText";
+  newProjText.type = "text";
+  newProjText.setAttribute("minlength", "3");
+  newProjForm.appendChild(newProjText);
+
+  const confirmProjText = document.createElement("input");
+  confirmProjText.id = "confirmProject";
+  confirmProjText.type = "submit";
+  confirmProjText.value = "confirm";
+  newProjForm.appendChild(confirmProjText);
+
+  const cancelProjBtn = document.createElement("button");
+  cancelProjBtn.id = "cancelProject";
+  cancelProjBtn.textContent = "X";
+  newProjForm.appendChild(cancelProjBtn);
+
+  // `
+  //   <div class="newProject">
+  //               <form action="">
+  //           <input type="text" id="newProjectText" required minlength="3">
+  //           <input type="submit" id="confirmProject" value="Confirm">
+  //           <button id="cancelProject">X</button>
+  //         </form>
+  //     </div>`;
+  const confirmProjectBtn = document.querySelector("#confirmProject");
+  const cancelProjectBtn = document.querySelector("#cancelProject");
+
+  const confirmProjectCallback = (e) => {
+    e.preventDefault();
+    const projectName = document.querySelector("#newProjectText").value;
+    addProject(projectName);
+    confirmProjectBtn.removeEventListener("click", confirmProjectCallback);
+    cancelProjectBtn.removeEventListener("click", cancelProjectCallback);
+    newProjectEl.innerHTML = "";
+  };
+
+  const cancelProjectCallback = () => {
+    confirmProjectBtn.removeEventListener("click", confirmProjectCallback);
+    cancelProjectBtn.removeEventListener("click", cancelProjectCallback);
+    newProjectEl.innerHTML = "";
+  };
+
+  confirmProjectBtn.addEventListener("click", confirmProjectCallback);
+  cancelProjectBtn.addEventListener("click", cancelProjectCallback);
+}
+
 function renderProjects() {
   return state.projects
     .map((project) => {
@@ -62,10 +116,17 @@ function removeProject(uuid) {
   renderContent();
 }
 
-renderContent();
-addProject("tweedle");
-addProject("dum");
-addProject("random");
-addProject("dee");
-removeProject("dee");
-removeProject("tweedle");
+function startApp() {
+  document
+    .querySelector("#addProject")
+    .addEventListener("click", createNewProject);
+  renderContent();
+  addProject("tweedle");
+  addProject("dum");
+  addProject("random");
+  addProject("dee");
+  removeProject("dee");
+  removeProject("tweedle");
+}
+
+startApp();
