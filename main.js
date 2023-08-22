@@ -1,3 +1,4 @@
+import { intervalToDuration } from "date-fns";
 import renderHome from "./src/home";
 
 var state = {
@@ -22,14 +23,6 @@ function navigatePage(page) {
 function createNewProject() {
   const newProjectEl = document.querySelector("#new-project");
   document.createElement("div").classList.add("newProject");
-  // newProjectEl.innerHTML = `
-  //   <div class="newProject">
-  //               <form action="">
-  //           <input type="text" id="newProjectText" required minlength="3">
-  //           <button id="confirmProject" value="Confirm">Confirm</button>
-  //           <button id="cancelProject">X</button>
-  //         </form>
-  //     </div>`;
 
   const newProjForm = document.createElement("form");
   newProjectEl.appendChild(newProjForm);
@@ -57,6 +50,7 @@ function createNewProject() {
   const cancelProjectBtn = document.querySelector("#cancelProject");
 
   const confirmProjectCallback = (e) => {
+    if (!newProjText.checkValidity()) newProjText.invalid();
     e.preventDefault();
     const projectName = document.querySelector("#newProjectText").value;
     addProject(projectName);
