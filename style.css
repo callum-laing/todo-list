@@ -178,4 +178,5 @@ button {
 
 .project-btn:hover {
   background-color: white;
+  cursor: pointer;
 }
