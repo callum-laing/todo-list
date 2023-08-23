@@ -1,6 +1,7 @@
 function taskCreation() {
   const taskPopup = document.querySelector("#mainContent");
   taskPopup.innerHTML = `<div id="taskForm" class="hidden">
+  <h2 class="form-title">Add Task</h2>
         <form id="taskFormFields">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required><br>
@@ -11,7 +12,7 @@ function taskCreation() {
             <label for="dueDate">Due Date:</label>
             <input type="date" id="dueDate" name="dueDate" required><br>
 
-            <button type="submit">Submit</button>
+            <button id="form-submit-btn" type="submit">Submit</button>
         </form>
     </div>`;
 }

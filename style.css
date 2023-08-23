@@ -232,3 +232,30 @@ button {
 #cancelProject:hover {
   background-color: #e34b53;
 }
+
+.form-title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#taskFormFields {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 400px;
+  margin-top: 20px;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #A98E89;
+  font-size: 1.2rem;
+}
+
+#form-submit-btn {
+  border-radius: 5px;
+}
+
+#form-submit-btn:hover {
+  cursor: pointer;
+  background-color: #6fcf6d;
+  border: 1px solid #856660;
+}
