@@ -52,7 +52,7 @@ button {
   height: 100vh;
   overflow: none;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 300px 1fr;
   grid-template-rows: 70px 1fr;
   grid-template-areas:
     "header header"
@@ -151,32 +151,84 @@ button {
   margin-top: 50px;
 }
 
+#newProjectText {
+  margin-left: 5px;
+  border-radius: 5px;
+}
 
 .projectTitleText {
   display: flex;
   align-items: center;
-  margin: 5px;
-  padding: 5px;
   border-bottom: 1px solid black;
+  justify-content: space-between;
+}
+
+#project-list {
+  margin-top: 10px;
 }
 
 .project-title-list {
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
   margin-left: 20px;
   list-style-type: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
 }
 
 .project-btn {
-  font-size: 0.8rem;
-  width: 40px;
-  color: red;
-  background-color: #cccbca;
-  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  border-radius: 5px;
+  background-color: white;
+  font-weight: bold;
+  margin-right: 5px;
+  border: 1px solid black;
 }
 
 .project-btn:hover {
-  background-color: white;
+  background-color: #e34b53;
   cursor: pointer;
+}
+
+#addProject {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid #856660;
+  width: 30px;
+  font-size: 2rem;
+  height: 30px;
+}
+
+#addProject:hover {
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #6fcf6d;
+}
+
+#confirmProject,
+#cancelProject {
+  width: 50px;
+  margin: 2px;
+  border-radius: 5px;
+  background-color: white;
+  font-weight: bold;
+}
+
+#confirmProject:hover,
+#cancelProject:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#confirmProject:hover {
+  background-color: #6fcf6d;
+}
+
+#cancelProject:hover {
+  background-color: #e34b53;
 }
