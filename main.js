@@ -1,4 +1,5 @@
-import renderHome from "./src/home";
+import renderHome from "./src/home.js";
+import taskCreation from "./src/task.js";
 
 var state = {
   page: "home",
@@ -77,7 +78,6 @@ function renderProjects() {
     })
     .reduce((acc, elm) => acc + elm, []);
 }
-console.log(renderProjects());
 
 function renderContent() {
   const projectListEl = document.querySelector("#project-list");
@@ -89,8 +89,12 @@ function renderContent() {
   });
 
   if (state.page == "home") {
-    console.log("works");
     renderHome();
+
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    addTaskBtn.addEventListener("click", () => {
+      taskCreation();
+    });
   }
 }
 
@@ -118,7 +122,6 @@ function startApp() {
     .querySelector("#addProject")
     .addEventListener("click", createNewProject);
   renderContent();
-  // addProject("tweedle");
   // addProject("dum");
   // addProject("random");
   // addProject("dee");
