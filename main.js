@@ -1,6 +1,4 @@
-import { intervalToDuration } from "date-fns";
 import renderHome from "./src/home";
-import taskCreation from "./src/task";
 
 var state = {
   page: "home",
