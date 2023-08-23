@@ -1,5 +1,6 @@
 import { intervalToDuration } from "date-fns";
 import renderHome from "./src/home";
+import taskCreation from "./src/task";
 
 var state = {
   page: "home",
@@ -19,6 +20,8 @@ function navigatePage(page) {
   state.page = page;
   renderContent();
 }
+
+//PROJECT MANAGEMENT
 
 function createNewProject() {
   const newProjectEl = document.querySelector("#new-project");
