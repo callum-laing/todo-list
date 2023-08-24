@@ -45,7 +45,7 @@ function createNewProject() {
   const cancelProjText = document.createElement("input");
   cancelProjText.id = "cancelProject";
   cancelProjText.type = "submit";
-  cancelProjText.value = "X";
+  cancelProjText.value = "✗";
   newProjForm.appendChild(cancelProjText);
 
   const confirmProjectBtn = document.querySelector("#confirmProject");

@@ -79,6 +79,11 @@ button {
   margin-top: 5px;
 }
 
+.content-title {
+  letter-spacing: 2px;
+}
+
+
 .title-svg {
   width: 60px;
   height: 60x;
@@ -156,6 +161,14 @@ button {
   border-radius: 5px;
 }
 
+.projectTitle {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
 .projectTitleText {
   display: flex;
   align-items: center;
@@ -212,12 +225,14 @@ button {
 
 #confirmProject,
 #cancelProject {
-  width: 50px;
+  width: 30px;
+  height: 30px;
   margin: 2px;
   border-radius: 5px;
   background-color: white;
   font-weight: bold;
 }
+
 
 #confirmProject:hover,
 #cancelProject:hover {
