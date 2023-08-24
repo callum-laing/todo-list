@@ -39,7 +39,7 @@ function createNewProject() {
   const confirmProjText = document.createElement("input");
   confirmProjText.id = "confirmProject";
   confirmProjText.type = "submit";
-  confirmProjText.value = "OK";
+  confirmProjText.value = "✓";
   newProjForm.appendChild(confirmProjText);
 
   const cancelProjText = document.createElement("input");
