@@ -1,6 +1,21 @@
 import renderHome from "./src/home.js";
 import taskCreation from "./src/task.js";
 
+class Task {
+  constructor(name, description, dueDate, priority) {
+    this.name = name;
+    this.description = description;
+    this.dueDate = dueDate;
+  }
+}
+
+class Project {
+  constructor(title) {
+    this.title = title;
+    this.tasks = [];
+  }
+}
+
 var state = {
   page: "home",
   projects: [],
